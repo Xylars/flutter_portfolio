@@ -4,12 +4,10 @@ import 'package:flutter_application_1/utils/custom_button.dart';
 
 class HomePage extends StatelessWidget {
   final String name;
-  final String intro;
 
   const HomePage({
     super.key,
     required this.name,
-    required this.intro,
   });
 
   @override
@@ -58,7 +56,7 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 24),
 
                 CustomText(
-                  text: intro,
+                  text: "Flutter Developer",
                   fontSize: 16,
                   color: Colors.black,
                   height: 1.5,

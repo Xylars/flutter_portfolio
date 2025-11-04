@@ -12,13 +12,13 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final nameController = TextEditingController();
-  final introController = TextEditingController();
+  final passwordController = TextEditingController();
 
   void _goToHome() {
     final name = nameController.text.trim();
-    final intro = introController.text.trim();
+    final password = passwordController.text.trim();
 
-    if (name.isEmpty || intro.isEmpty) {
+    if (name.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please fill in both fields.')),
       );
@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => HomePage(name: name, intro: intro),
+        builder: (_) => HomePage(name: name),
       ),
     );
   }
@@ -36,42 +36,57 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          child: Center(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const Text(
-                    'Welcome!',
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/login.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32),
+            child: Center(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const Text(
+                      'Welcome!',
+                      style: TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            offset: Offset(1, 1),
+                            blurRadius: 3,
+                            color: Colors.black45,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 40),
+                    const SizedBox(height: 40),
 
-                  CustomTextField(
-                    controller: nameController,
-                    label: 'Your Name',
-                  ),
-                  const SizedBox(height: 20),
+                    CustomTextField(
+                      controller: nameController,
+                      label: 'Your Name',
+                    ),
+                    const SizedBox(height: 20),
 
-                  CustomTextField(
-                    controller: introController,
-                    label: 'Short Introduction',
-                  ),
+                    CustomTextField(
+                      controller: passwordController,
+                      label: 'Password',
+                      isPassword: true,
+                    ),
 
-                  const SizedBox(height: 40),
+                    const SizedBox(height: 40),
 
-                  CustomButton(
-                    text: 'Continue',
-                    onPressed: _goToHome,
-                  ),
-                ],
+                    CustomButton(
+                      text: 'Continue',
+                      onPressed: _goToHome,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
