@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/home.dart';
 import 'package:flutter_application_1/utils/custom_button.dart';
+import 'package:flutter_application_1/utils/custom_text.dart';
 import 'package:flutter_application_1/utils/custom_text_field.dart';
 
 class LoginPage extends StatefulWidget {
@@ -50,20 +51,12 @@ class _LoginPageState extends State<LoginPage> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    const Text(
-                      'Welcome!',
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        shadows: [
-                          Shadow(
-                            offset: Offset(1, 1),
-                            blurRadius: 3,
-                            color: Colors.black45,
-                          ),
-                        ],
-                      ),
+                    const CustomText(
+                      text: 'Welcome!',
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 40),
 
