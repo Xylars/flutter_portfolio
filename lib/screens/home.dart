@@ -47,7 +47,6 @@ class HomePage extends StatelessWidget {
 
                 const SizedBox(height: 40),
 
-                // Intro text
                 CustomText(
                   text: 'Hi $name',
                   fontSize: 32,
@@ -58,18 +57,16 @@ class HomePage extends StatelessWidget {
 
                 const SizedBox(height: 24),
 
-                // Description
                 CustomText(
                   text: intro,
                   fontSize: 16,
-                  color: Colors.black87,
+                  color: Colors.black,
                   height: 1.5,
                   textAlign: TextAlign.center,
                 ),
 
                 const SizedBox(height: 40),
 
-                // Custom button
                 CustomButton(
                   text: 'Back',
                   onPressed: () => Navigator.pop(context),

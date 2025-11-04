@@ -63,7 +63,6 @@ class _LoginPageState extends State<LoginPage> {
                   CustomTextField(
                     controller: introController,
                     label: 'Short Introduction',
-                    maxLines: 3,
                   ),
 
                   const SizedBox(height: 40),
