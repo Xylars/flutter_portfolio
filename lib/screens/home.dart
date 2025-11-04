@@ -50,17 +50,12 @@ class HomePage extends StatelessWidget {
                   fontSize: 32,
                   fontWeight: FontWeight.w700,
                   height: 1.3,
-                  textAlign: TextAlign.center,
                 ),
 
                 const SizedBox(height: 24),
 
                 CustomText(
                   text: "Flutter Developer",
-                  fontSize: 16,
-                  color: Colors.black,
-                  height: 1.5,
-                  textAlign: TextAlign.center,
                 ),
 
                 const SizedBox(height: 40),
